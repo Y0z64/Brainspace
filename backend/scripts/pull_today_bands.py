@@ -49,7 +49,9 @@ BANDS = {
 }
 
 
-def bandpass_fft(waveform: np.ndarray, low_hz: float, high_hz: float, fs: int) -> np.ndarray:
+def bandpass_fft(
+    waveform: np.ndarray, low_hz: float, high_hz: float, fs: int
+) -> np.ndarray:
     """Band-pass filter a 1-D signal by zeroing out-of-band FFT bins.
 
     Simple, dependency-light approach suited to short fixed-length records.
@@ -228,7 +230,10 @@ def main() -> int:
 
     print("\nDone. Rows written per band:", file=sys.stderr)
     for band in BANDS:
-        print(f"  {band:6s} -> {out_dir / f'{band}.csv'} ({counts[band]} rows)", file=sys.stderr)
+        print(
+            f"  {band:6s} -> {out_dir / f'{band}.csv'} ({counts[band]} rows)",
+            file=sys.stderr,
+        )
     return 0
 
 

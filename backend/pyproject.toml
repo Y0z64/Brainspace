@@ -11,3 +11,9 @@ dependencies = [
     "requests>=2.34.2",
     "uvicorn>=0.48.0",
 ]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.15",
+    "ty>=0.0.40",
+]
