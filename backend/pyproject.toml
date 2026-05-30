@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "backend"
 version = "0.1.0"
@@ -7,6 +11,7 @@ requires-python = ">=3.14"
 dependencies = [
     "dotenv>=0.9.9",
     "fastapi[standard]>=0.136.3",
+    "jupyterlab>=4.5.7",
     "numpy>=2.4.6",
     "requests>=2.34.2",
     "uvicorn>=0.48.0",
@@ -14,6 +19,13 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "jupyterlab>=4.5.7",
+    "matplotlib>=3.10.9",
     "ruff>=0.15.15",
     "ty>=0.0.40",
 ]
+
+# The distributable package is `app`; the data dir `artifacts/` and any
+# stray top-level dirs are excluded by scoping discovery to `app*`.
+[tool.setuptools.packages.find]
+include = ["app*"]

@@ -5,9 +5,11 @@ build/
 dist/
 wheels/
 *.egg-info
+.ipynb_checkpoints/
 
 # Virtual environments
 .venv
 
 #data
 artifacts/
+cached_bands.ipynb
